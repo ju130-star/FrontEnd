@@ -20,3 +20,5 @@ menu.style.justifyContent = "space-around";
 menu.style.alignItems = "center"
 menu.style.color = "white";
 menu.style.height = "100%";
+
+// Footer -> DOM
