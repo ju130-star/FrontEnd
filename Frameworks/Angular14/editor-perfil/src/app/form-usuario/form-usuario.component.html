@@ -1,39 +1,52 @@
 <div class="container">
-    <h2>Formulário de Edição de Perfil</h2>
-    <form>
-        <label>Nome:</label>
-        <input type="text" name="nome" [(ngModel)]="nome">
-        <br>
-        <label>Email:</label>
-        <input type="email" name="email" [(ngModel)]="email">
-        <br>
-        <label>Telefone:</label>
-        <input type="text" name="telefone" [(ngModel)]="telefone">
-        <br>
-         <label>Gênero:</label>
-        <select name="telefone" [(ngModel)]="genero">
+  <h2>Formulário de Edição de Perfil</h2>
+  <form>
+      <label>Nome:</label>
+      <input type="text" name="nome" [(ngModel)]="nome" required pattern="^[A-ZÁ-Ú][a-zá-ú\s]+$" #nomeRef="ngModel"> 
+      <br>
+
+      <label>Email:</label>
+      <input type="email" name="email" [(ngModel)]="email" required #emailRef="ngModel">
+      <br>
+
+      <label>Telefone:</label>
+      <input type="text" name="telefone" [(ngModel)]="telefone" required minlength="9" #telefoneRef="ngModel">
+      <br>
+
+      <label>Gênero</label>
+      <select name="genero" [(ngModel)]="genero">
           <option value="">Selecione</option>
           <option value="feminino">Feminino</option>
-          <option value="Masculino">Masculino</option>
-          <option value="Outro">Outro</option>
-        </select>
-        <br>
-        <label for="">Idade:</label>
-       <input type="number" name="idade" [(ngModel)]= "idade">
-        <br>
-        <label>Profissão:</label>
-        <input type="text" name="profissao" [(ngModel)]="profissao">
-        <br>
-    </form>
-    <br>
-    <hr>
-    <br>
-    <h2>Dados do Usuário em Tempo Real</h2>
-    <div class="view">
-      <p><strong>Nome:</strong>{{nome}}</p>
-      <p><strong>Email:</strong>{{email}}</p>
-      <p><strong>Telefone:</strong>{{telefone}}</p>
-      <p><strong>Gênero:</strong>{{genero}}</p>
-      <p><strong>Idade:</strong>{{idade}}</p>
+          <option value="masculino">Masculino</option>
+          <option value="outro">Outro</option>
+      </select>
+      <br>
+
+      <label for="">Idade:</label>
+      <input type="number" name="idade" [(ngModel)]="idade" required min="19" #idadeRef="ngModel">
+
+      <label>Profissão:</label>
+      <input type="text" name="profissao" [(ngModel)]="profissao">
+      <br>
+
+  </form>
+  <br>
+  <div class="botoes">
+  <button type="button" (click)="enviarFormulario()">Enviar</button>
+  <button type="button" (click)="limparDados()">Limpar</button>
+  </div>
+
+  <br>
+  <hr>
+  <br>
+
+  <h2>Dados do Usuário em Tempo Real</h2>
+  <div class="view">
+      <p><strong>Nome:</strong> {{nome}}</p>
+      <p><strong>Email:</strong> {{email}}</p>
+      <p><strong>Telefone:</strong> {{telefone}}</p>
+      <p><strong>Gênero:</strong> {{genero}}</p>
+      <p><strong>Idade:</strong> {{idade}}</p>
       <p><strong>Profissão:</strong> {{profissao}}</p>
+  </div>
 </div>
