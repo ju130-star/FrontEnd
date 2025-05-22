@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Vaga } from 'src/app/models/vaga.model';
 import { VagaService } from 'src/app/service/vaga.service';
 
@@ -8,73 +8,59 @@ import { VagaService } from 'src/app/service/vaga.service';
   styleUrls: ['./painel-vagas.component.scss'],
 })
 export class PainelVagasComponent implements OnInit {
-  public vaga: Vaga = new Vaga(0, '', '', '', 0);
-  //rastrear od dados da api
-  public vagas: Vaga[] = [];
-  //armazenar as vagas da API
+//atributos
+public vaga: Vaga = new Vaga(0, "","","",0); //Rastrear os dados
+//vetor para armazenar as info do DB
+public vagas:Vaga[] = [];
 
-  constructor(private _vagasService: VagaService) {}
-  //estabelece o serviço de busca no servidor
+constructor(private _vagasService: VagaService){}
 
   ngOnInit(): void {
-    this.listarVagas();
-  }
-  //listar todas as Vagas
-  listarVagas() {
-    // Lista as vagas do servidor usando o serviço 'VagaService'
-    this._vagasService.getVagas().subscribe((retornaVaga) => {
-      this.vagas = retornaVaga.map((item) => {
-        // Mapeia os dados retornados para objetos 'Vaga'
-        return new Vaga(
-          item.id,
-          item.nome,
-          item.foto,
-          item.descricao,
-          item.salario
-        );
-      });
-    });
+ this.listarVagas();
   }
 
-  //listar apenas uma unica vaga //put
-  listarVagaUnica(vaga: Vaga) {
-    this.vaga = vaga;
+  listarVagas(){
+    this._vagasService.getVagas().subscribe(
+      (retornoVaga) => {this.vagas = retornoVaga.map(
+        (item)=> Vaga.fromMap(item)
+      );}
+    );
+  }
+  //listar vaga unica
+  listarVagaUnica(vaga: Vaga){
+    this.vaga = vaga
   }
 
-  //cadastrar //post
+  //cadastarr nova vaga
   cadastrar() {
     this._vagasService.cadastrarVaga(this.vaga).subscribe(
-      () => {
-        this.vaga = new Vaga(0, '', '', '', 0); //limpar formulario
-        this.listarVagas(); //atualizar lista
-      },
-      (err) => {
-        console.error('Erro ao cadastra', err); //Mostar erro do servidor
-      }
-    );
-  }
-  atualizar(id: number) {
-    this._vagasService.atualizarVaga(id, this.vaga).subscribe(
-      () => {
-        //após atualizar
-        this.vaga = new Vaga(0, '', '', '', 0);
-        this.listarVagas();
-      },
-      (err) => {
-        console.error('Erro ao Atualizar', err);
-      }
+    () => {
+      this.vaga = new Vaga(0, "","","",0);
+      this.listarVagas();
+    },
+    (err) => {console.error("Erro ao Cadastrar",err);}
     );
   }
 
-  excluir(id: number) {
-    this._vagasService.removerVaga(id).subscribe(
-      () => {
-        this.vaga = new Vaga(0, '', '', '', 0);
-        this.listarVagas();
-      },
-      (err) => {
-        console.error('Erro ao Excluir', err);
-      }
+  // atualizar nova Vaga
+  atualizar(id:number){
+    this._vagasService.atualizarVaga(id, this.vaga).subscribe(
+()=> {
+  this.vaga = new Vaga(0, '', '', '', 0);
+  this.listarVagas
+},
+(err) =>{console.log("Erro ao atualizar",err);}
     );
   }
+  //deletar vaga
+  excluir(id:number){
+    this._vagasService.removerVaga(id).subscribe(
+      () => { this.listarVagas();},
+      (err) => {console.log("Erro ao Deletar",err)}
+    );
+  }
+
+
 }
+
+    
