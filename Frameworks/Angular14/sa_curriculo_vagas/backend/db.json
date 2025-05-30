@@ -22,11 +22,79 @@
       "salario": 10000
     },
     {
-      "id": 4,
+      "id": "4",
       "nome": "Gerente de Nuvem",
       "foto": "Foto4.jpg",
       "descricao": "Vagas de Gerente em Nuvem",
       "salario": 8500
+    }
+  ],
+  "curriculos": [
+    {
+      "id": "1",
+      "nome": "Lucas Almeida",
+      "idade": 27,
+      "estadoCivil": "Solteiro",
+      "email": "lucas.almeida@example.com",
+      "telefone": "(11) 91234-5678",
+      "formacao": "Bacharel em Ciência da Computação",
+      "experiencia": "4 anos como desenvolvedor full stack",
+      "habilidades": "JavaScript, React, Node.js, MongoDB, Docker"
+    },
+    {
+      "id": "2",
+      "nome": "Mariana Costa",
+      "idade": 30,
+      "estadoCivil": "Casada",
+      "email": "mariana.costa@example.com",
+      "telefone": "(21) 98765-4321",
+      "formacao": "Engenharia de Software",
+      "experiencia": "5 anos em desenvolvimento backend",
+      "habilidades": "Java, Spring Boot, MySQL, REST APIs, AWS"
+    },
+    {
+      "id": "3",
+      "nome": "Rafael Souza",
+      "idade": 25,
+      "estadoCivil": "Solteiro",
+      "email": "rafael.souza@example.com",
+      "telefone": "(31) 99876-5432",
+      "formacao": "Tecnólogo em Análise e Desenvolvimento de Sistemas",
+      "experiencia": "3 anos em desenvolvimento mobile",
+      "habilidades": "Kotlin, Android, Firebase, Git, UI/UX"
+    },
+    {
+      "id": "4",
+      "nome": "Camila Martins",
+      "idade": 28,
+      "estadoCivil": "Solteira",
+      "email": "camila.martins@example.com",
+      "telefone": "(41) 98765-1234",
+      "formacao": "Bacharel em Sistemas de Informação",
+      "experiencia": "4 anos em front-end development",
+      "habilidades": "HTML, CSS, JavaScript, Vue.js, Webpack"
+    },
+    {
+      "id": 0,
+      "nome": "Julya",
+      "idade": 18,
+      "estadoCivil": "Solteira",
+      "email": "julya@gmail.com",
+      "telefone": "1198754035",
+      "formacao": "Engenharia de Software",
+      "experiencia": "2 meses de desenvolvimento full stack",
+      "habilidades": "JavaScript, React, Node.js"
+    },
+    {
+      "id": 12,
+      "nome": "Luisa ",
+      "idade": 17,
+      "estadoCivil": "solteira",
+      "email": "lsdlksjdlka@g",
+      "telefone": "1999909",
+      "formacao": "gnfgh",
+      "experiencia": "fghfghfg",
+      "habilidades": "fghfghfgh"
     }
   ]
 }
