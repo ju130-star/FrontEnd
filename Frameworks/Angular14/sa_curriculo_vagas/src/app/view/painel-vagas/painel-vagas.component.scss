@@ -1,147 +1,154 @@
-//estilização do painel-vagas
-//declaração de variáveis em SCSS
 $cor-primaria: #007bff;
-$cor-secundaria: #6c757d;
+$cor-secundaria: #314d3c;
 $cor-sucesso: #28a745;
 $cor-perigo: #dc3545;
 
-form{
+h2{
+  margin-top: 10px;
+  text-align: center;
+}
+.form-card {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  width: 100%;
   max-width: 600px;
-  margin: 0 auto;
-  padding: 2rem;
-  border: 2rem;
-  border-radius: 8px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
 
-  label{
+  .card-body {
+    width: 100%;
+    padding: 2rem;
+  }
+}
+
+form {
+  width: 100%;
+
+  label {
     display: block;
     margin-bottom: 0.5rem;
     color: #444;
     font-size: 1rem;
   }
-  input{
-    width: calc(100% - 20%);
-    padding: 1rem 10px;
+
+  input {
+    width: 100%;
+    padding: 0.8rem;
     margin-bottom: 1.5rem;
     border: 1px solid #aaa;
     border-radius: 5px;
     font-size: 1rem;
+    align-items: center;
 
-    &:focus{
-      outline:  none;
-      border-color:  $cor-primaria;
-      box-shadow: 0,0,0,rgba($color: $cor-primaria, $alpha:0.25);
+    &:focus {
+      outline: none;
+      border-color: $cor-primaria;
+      box-shadow: 0 0 0 0.25rem rgba($cor-primaria, 0.25);
     }
   }
 
-   button {
-     padding: 0.8rem 1.5rem;
-     border: none;
-     border-radius: 5px;
-     cursor: pointer;
-     font-size: 1rem;
-     font-weight: bold;
-     color: #ffffff;
-     margin-right: 0.75rem;
+  button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-right: 0.75rem;
 
-    &[type="button"]:nth-of-type(1) {
-        //Botão Cadastrar
-        background-color: $cor-secundaria;
+    &:nth-of-type(1) {
+      background-color: $cor-sucesso;
 
-        &:hover {
-          background-color: darken($color: $cor-sucesso, $amount: 10%);
-        }}
-
-
-      &[type="button"]:nth-of-type(2) {
-        //Botão Atualizar
-        background-color: $cor-secundaria;
-
-        &:hover {
-          background-color: darken($color: #eeff00, $amount: 10%);
-        }}
-
-
-      &[type="button"]:nth-of-type(3) {
-        //Botão Atualizar
-        background-color: $cor-secundaria;
-
-        &:hover {
-          background-color: darken($color: $cor-perigo, $amount: 10%);
-        }}
-
-    }
+      &:hover {
+        background-color: darken($cor-sucesso, 10%);
+      }
     }
 
-    //estilização da tabela
-    .lista-vagas{
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-      overflow-x: auto;
+    &:nth-of-type(2) {
+      background-color: #e4ec70;
+      color: #333;
 
-      .table{
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 1.5rem;
-        font-size: 0.8rem;
+      &:hover {
+        background-color: darken(#f8ff91, 10%);
       }
+    }
 
-      td,th{
-        padding: 12px 15px;
-        text-align: left;
-        border-bottom: 1px solid #aaa;
-        vertical-align: middle;
+    &:nth-of-type(3) {
+      background-color: $cor-perigo;
+
+      &:hover {
+        background-color: darken($cor-perigo, 10%);
       }
-      thead{
-        background-color:  #999;
-        th{
-          color: #444;
-          font-weight: bold;
-        }
-      }
-      tbody{
-        tr{
-          &:hover{
-             background-color: lighten($color: #999,
-              $amount: 5%);
-          }
-        }
-      }
+    }
+  }
+}
 
+// Lista de Vagas
+.lista-vagas {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
 
-        btn-listar {
-          border:none;
-          background-color: #ffff00;
-          padding: 5px 10px;
-          cursor: pointer;
-          border-radius: 5px;
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+  }
 
-          &:houver{
-            background-color: darken($color:#999,
-              $amount: 5%);
-          }
-        }
+  td,
+  th {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #aaa;
+    vertical-align: middle;
+  }
 
-        btn-excluir {
-        border:none;
-        background-color: $cor-secundaria;
-        padding: 5px 10px;
-        cursor: pointer;
-        border-radius: 5px;
+  thead {
+    background-color: #999;
 
-        &:houver {
-          background-color: darken($color: $cor-perigo,
-              $amount: 5%);
+    th {
+      color: #444;
+      font-weight: bold;
+    }
+  }
 
-            }
-        }
-      }
+  tbody tr:hover {
+    background-color: lighten(#999, 5%);
+  }
 
-        .rodape {
-        height: 10vh;
-        }
-      
+  .btn-listar {
+    border: none;
+    background-color: #f7f778;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: darken(#ffff00, 5%);
+    }
+  }
+
+  .btn-excluir {
+    border: none;
+    background-color: $cor-perigo;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: darken($cor-perigo, 5%);
+    }
+  }
+}
+
+.rodape {
+  height: 10vh;
+}

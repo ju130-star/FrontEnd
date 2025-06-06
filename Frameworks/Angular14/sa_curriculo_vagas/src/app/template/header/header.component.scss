@@ -3,12 +3,12 @@
   justify-content: space-around;
   align-items: center;
   padding: 1rem 1.5rem;
-  background-color: #eee;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: #45a17b;
+  box-shadow: 0 2px 4px rgba(32, 34, 30, 0.5);
 
   a {
     text-decoration: none; //remove o sublinhado texto
-    color: #777;
+    color: #f1e9e9;
     font-weight: bold;
     font-size: 1.5rem;
   }
@@ -18,12 +18,12 @@
     gap: 1.5rem;
 
     .navLink {
-      color: #777;
+      color: #080808;
       padding: 0.5rem 0;
       transition: color 0.3s ease; //transição de 0.3
 
       &:hover {
-        color: #555;
+        color: #fffafa;
       }
     }
   }

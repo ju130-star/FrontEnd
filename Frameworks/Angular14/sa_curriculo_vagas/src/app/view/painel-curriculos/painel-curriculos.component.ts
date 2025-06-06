@@ -30,7 +30,34 @@ export class PainelCurriculosComponent implements OnInit {
     this.curriculo = curriculo;
   }
 
+  camposPreenchidos(): boolean {
+    const {
+      nome,
+      idade,
+      estadoCivil,
+      email,
+      telefone,
+      formacao,
+      experiencia,
+      habilidades,
+    } = this.curriculo;
+    return (
+      nome.trim() !== '' &&
+      idade > 0 &&
+      estadoCivil.trim() !== '' &&
+      email.trim() !== '' &&
+      telefone.trim() !== '' &&
+      formacao.trim() !== '' &&
+      experiencia.trim() !== '' &&
+      habilidades.trim() !== ''
+    );
+  }
+
   cadastrar() {
+    if (!this.camposPreenchidos()) {
+      alert('Por favor, preencha todos os campos obrigatórios.');
+      return;
+    }
     this._curriculoService.cadastrarCurriculo(this.curriculo).subscribe(
       () => {
         this.curriculo = new Curriculo(0, '', 0, '', '', '', '', '', '');

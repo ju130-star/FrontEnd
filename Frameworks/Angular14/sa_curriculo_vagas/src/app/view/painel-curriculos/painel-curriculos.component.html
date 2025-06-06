@@ -1,70 +1,85 @@
-<h2>Cadastrar Currículo</h2>
-<form>
-  <label>ID</label>
-  <input type="number" name="id" [(ngModel)]="curriculo.id" /><br />
+<h2 style="text-align: center; margin-top: 2rem;">Cadastrar Currículo</h2>
 
-  <label>Nome</label>
-  <input type="text" name="nome" [(ngModel)]="curriculo.nome" /><br />
+<!-- Card do formulário -->
+<div class="card form-card" style="max-width: 800px; margin: 0 auto;">
+  <div class="card-body">
+    <form>
+      <label>ID</label>
+      <input type="number" name="id" [(ngModel)]="curriculo.id" />
 
-  <label>Idade</label>
-  <input type="number" name="idade" [(ngModel)]="curriculo.idade" /><br />
+      <label>Nome</label>
+      <input type="text" name="nome" [(ngModel)]="curriculo.nome" />
 
-  <label>Estado Civil</label>
-  <input type="text" name="estadoCivil" [(ngModel)]="curriculo.estadoCivil" /><br />
+      <label>Idade</label>
+      <input type="number" name="idade" [(ngModel)]="curriculo.idade" />
 
-  <label>Email</label>
-  <input type="email" name="email" [(ngModel)]="curriculo.email" /><br />
+      <label>Estado Civil</label>
+      <input type="text" name="estadoCivil" [(ngModel)]="curriculo.estadoCivil" />
 
-  <label>Telefone</label>
-  <input type="text" name="telefone" [(ngModel)]="curriculo.telefone" /><br />
+      <label>Email</label>
+      <input type="email" name="email" [(ngModel)]="curriculo.email" />
 
-  <label>Formação</label>
-  <input type="text" name="formacao" [(ngModel)]="curriculo.formacao" /><br />
+      <label>Telefone</label>
+      <input type="text" name="telefone" [(ngModel)]="curriculo.telefone" />
 
-  <label>Experiência</label>
-  <input type="text" name="experiencia" [(ngModel)]="curriculo.experiencia" /><br />
+      <label>Formação</label>
+      <input type="text" name="formacao" [(ngModel)]="curriculo.formacao" />
 
-  <label>Habilidades</label>
-  <input type="text" name="habilidades" [(ngModel)]="curriculo.habilidades" /><br />
+      <label>Experiência</label>
+      <input type="text" name="experiencia" [(ngModel)]="curriculo.experiencia" />
 
-  <button type="button" (click)="cadastrar()">Cadastrar Currículo</button>
-  <button type="button" (click)="atualizar(curriculo.id)">Atualizar Currículo</button>
-  <button type="button" (click)="excluir(curriculo.id)">Excluir Currículo</button>
-</form>
+      <label>Habilidades</label>
+      <input type="text" name="habilidades" [(ngModel)]="curriculo.habilidades" />
 
-<section class="lista-curriculos">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Nome</th>
-        <th>Idade</th>
-        <th>Estado Civil</th>
-        <th>Email</th>
-        <th>Telefone</th>
-        <th>Formação</th>
-        <th>Experiência</th>
-        <th>Habilidades</th>
-        <th>Ações</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let curriculo of curriculos">
-        <td>{{ curriculo.id }}</td>
-        <td>{{ curriculo.nome }}</td>
-        <td>{{ curriculo.idade }}</td>
-        <td>{{ curriculo.estadoCivil }}</td>
-        <td>{{ curriculo.email }}</td>
-        <td>{{ curriculo.telefone }}</td>
-        <td>{{ curriculo.formacao }}</td>
-        <td>{{ curriculo.experiencia }}</td>
-        <td>{{ curriculo.habilidades }}</td>
-        <td>
-          <button (click)="listarCurriculoUnico(curriculo)">Listar</button>
-          <button (click)="excluir(curriculo.id)">Excluir</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+      <div style="text-align: center; margin-top: 1rem;">
+        <button type="button" (click)="cadastrar()">Cadastrar Currículo</button>
+        <button type="button" (click)="atualizar(curriculo.id)">Atualizar Currículo</button>
+        <button type="button" (click)="excluir(curriculo.id)">Excluir Currículo</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Card da lista -->
+<section class="lista-curriculo" style="margin-top: 2rem;">
+  <div class="card" style="padding: 1rem;">
+    <div class="card-body">
+      <h3 style="text-align: center;">Lista de Currículos</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Estado Civil</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Formação</th>
+            <th>Experiência</th>
+            <th>Habilidades</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let curriculo of curriculos">
+            <td>{{ curriculo.id }}</td>
+            <td>{{ curriculo.nome }}</td>
+            <td>{{ curriculo.idade }}</td>
+            <td>{{ curriculo.estadoCivil }}</td>
+            <td>{{ curriculo.email }}</td>
+            <td>{{ curriculo.telefone }}</td>
+            <td>{{ curriculo.formacao }}</td>
+            <td>{{ curriculo.experiencia }}</td>
+            <td>{{ curriculo.habilidades }}</td>
+            <td>
+              <button (click)="listarCurriculoUnico(curriculo)">Listar</button>
+              <button (click)="excluir(curriculo.id)">Excluir</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </section>
+
 <div class="rodape"></div>
