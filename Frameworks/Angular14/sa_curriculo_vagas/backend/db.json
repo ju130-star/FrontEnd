@@ -64,18 +64,7 @@
       "habilidades": "\tJavaScript, Node.js, MongoDB, Kotlin, Android"
     },
     {
-      "id": 0,
-      "nome": "",
-      "idade": 0,
-      "estadoCivil": "",
-      "email": "",
-      "telefone": "",
-      "formacao": "",
-      "experiencia": "",
-      "habilidades": ""
-    },
-    {
-      "id": 1,
+      "id": "1",
       "nome": "Julya",
       "idade": 17,
       "estadoCivil": "Solteira",

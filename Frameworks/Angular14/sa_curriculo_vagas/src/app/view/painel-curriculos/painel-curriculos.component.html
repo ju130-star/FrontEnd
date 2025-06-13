@@ -72,8 +72,8 @@
             <td>{{ curriculo.experiencia }}</td>
             <td>{{ curriculo.habilidades }}</td>
             <td>
-              <button (click)="listarCurriculoUnico(curriculo)">Listar</button>
-              <button (click)="excluir(curriculo.id)">Excluir</button>
+              <button class="btn btn-primary" (click)="listarCurriculoUnico(curriculo)">Listar</button>
+              <button class="btn btn-danger" (click)="excluir(curriculo.id)">Excluir</button>
             </td>
           </tr>
         </tbody>
