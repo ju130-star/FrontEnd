@@ -4,6 +4,9 @@
 <div class="card form-card" style="max-width: 800px; margin: 0 auto;">
   <div class="card-body">
     <form>
+      <label>Usuário ID</label>
+      <input type="number" name="usuarioId" [(ngModel)]="curriculo.usuarioId" />
+      
       <label>ID</label>
       <input type="number" name="id" [(ngModel)]="curriculo.id" />
 
@@ -37,6 +40,7 @@
         <button type="button" (click)="excluir(curriculo.id)">Excluir Currículo</button>
       </div>
     </form>
+
   </div>
 </div>
 

@@ -8,7 +8,8 @@ export class Curriculo {
     public telefone: string,
     public formacao: string,
     public experiencia: string,
-    public habilidades: string
+    public habilidades: string,
+    public usuarioId: number 
   ) {}
 
   toMap(): { [key: string]: any } {
@@ -22,6 +23,7 @@ export class Curriculo {
       formacao: this.formacao,
       experiencia: this.experiencia,
       habilidades: this.habilidades,
+      usuarioId: this.usuarioId
     };
   }
 
@@ -35,7 +37,8 @@ export class Curriculo {
       map.telefone,
       map.formacao,
       map.experiencia,
-      map.habilidades
+      map.habilidades,
+      map.usuarioId
     );
   }
 }

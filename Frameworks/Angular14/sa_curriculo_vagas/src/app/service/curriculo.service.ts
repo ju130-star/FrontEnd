@@ -17,6 +17,11 @@ export class CurriculoService {
     return this.http.get<Curriculo[]>(this.apiUrl);
   }
 
+ //Obter currículo por Id de usúario (Get)
+  getCurriculoByUsuarioId(usuarioId: number): Observable<Curriculo[]> {
+    return this.http.get<Curriculo[]>(`${this.apiUrl}?usuarioId=${usuarioId}`);
+  }
+
   // Cadastrar novo currículo (POST)
   cadastrarCurriculo(curriculo: Curriculo): Observable<Curriculo[]> {
     return this.http.post<Curriculo[]>(this.apiUrl, curriculo);

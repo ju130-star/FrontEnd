@@ -10,9 +10,12 @@ const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
   { path: 'curriculos', component: CurriculosComponent },
   { path: 'vagas', component: VagasComponent },
-  { path: "painel-vagas", component: PainelVagasComponent},
-  { path: "painel-curriculos", component: PainelCurriculosComponent},
+  { path: 'painel-vagas', component: PainelVagasComponent },
+  { path: 'painel-curriculos', component: PainelCurriculosComponent },
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
+  { path: 'curriculos/novo', component: CurriculosComponent },
+  { path: 'curriculos/editar/:id', component: CurriculosComponent },
+  { path: 'meu-curriculo', component: CurriculosComponent },
 ];
 
 @NgModule({

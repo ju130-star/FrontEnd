@@ -53,26 +53,16 @@
       "habilidades": "HTML, CSS, JavaScript, Vue.js, Webpack"
     },
     {
-      "id": "12",
-      "nome": "Luisa ",
-      "idade": 17,
-      "estadoCivil": "solteira",
-      "email": "lsdlksjdlka@g",
-      "telefone": "1999909",
-      "formacao": "gnfgh",
-      "experiencia": "fghfghfg",
-      "habilidades": "\tJavaScript, Node.js, MongoDB, Kotlin, Android"
-    },
-    {
-      "id": "1",
-      "nome": "Julya",
-      "idade": 17,
+      "id": 1,
+      "nome": "Isabela",
+      "idade": 18,
       "estadoCivil": "Solteira",
       "email": "julya@gmail.com",
-      "telefone": "(11)98450-8965",
+      "telefone": "(11)98450-8964",
       "formacao": "Tecnólogo em Análise e Desenvolvimento de Sistemas",
       "experiencia": "5 meses como desenvolvedora FullStack",
-      "habilidades": "JavaScript, Node.js, MongoDB, Kotlin, Android"
+      "habilidades": "JavaScript, Node.js, MongoDB, Kotlin, Android",
+      "usuarioId": 1
     }
   ]
 }

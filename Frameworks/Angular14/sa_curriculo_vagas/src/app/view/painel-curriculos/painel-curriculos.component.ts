@@ -9,7 +9,7 @@ import { CurriculoService } from 'src/app/service/curriculo.service';
 })
 export class PainelCurriculosComponent implements OnInit {
   // Objeto de rastreio
-  public curriculo: Curriculo = new Curriculo(0, '', 0, '', '', '', '', '', '');
+  public curriculo: Curriculo = new Curriculo(0, '', 0, '', '', '', '', '', '', 0);
 
   // Vetor de currículos
   public curriculos: Curriculo[] = [];
@@ -60,7 +60,7 @@ export class PainelCurriculosComponent implements OnInit {
     }
     this._curriculoService.cadastrarCurriculo(this.curriculo).subscribe(
       () => {
-        this.curriculo = new Curriculo(0, '', 0, '', '', '', '', '', '');
+        this.curriculo = new Curriculo(0, '', 0, '', '', '', '', '', '', 0);
         this.listarCurriculos();
       },
       (err) => {
@@ -72,7 +72,7 @@ export class PainelCurriculosComponent implements OnInit {
   atualizar(id: number) {
     this._curriculoService.atualizarCurriculo(id, this.curriculo).subscribe(
       () => {
-        this.curriculo = new Curriculo(0, '', 0, '', '', '', '', '', '');
+        this.curriculo = new Curriculo(0, '', 0, '', '', '', '', '', '', 0);
         this.listarCurriculos();
       },
       (err) => {
