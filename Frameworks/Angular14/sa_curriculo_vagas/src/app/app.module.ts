@@ -13,6 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { PainelVagasComponent } from './view/painel-vagas/painel-vagas.component';
 import { FormsModule } from '@angular/forms';
 import { PainelCurriculosComponent } from './view/painel-curriculos/painel-curriculos.component';
+import { LoginComponent } from './view/login/login.component';
+import { RegistroComponent } from './view/registro/registro.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { PainelCurriculosComponent } from './view/painel-curriculos/painel-curri
     FooterComponent,
     PainelVagasComponent,
     PainelCurriculosComponent,
+    LoginComponent,
+    RegistroComponent,
+    NavbarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule, FormsModule],
   providers: [],
