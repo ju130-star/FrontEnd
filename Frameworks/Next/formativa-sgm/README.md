@@ -96,7 +96,8 @@ Ilustra as interações dos diferentes tipos de usuários (Atores) com as funcio
     Fazer o login -> Antes de Qualquer Ação 
 
 
-    ```mermaid
+```mermaid
+
   graph TD 
   
     subgraph "SGM"
@@ -144,7 +145,7 @@ Detalha o passo a passo para realizar uma ação no sistema
 
 ```mermaid
 
-ggraph TD
+graph TD
     A[Início] --> B{Acessa a Tela de Login}
     B --> C[Preencher Email e Senha]
     C --> D{Validar as Credenciais}
