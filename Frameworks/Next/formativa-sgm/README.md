@@ -114,7 +114,7 @@ Ilustra as interações dos diferentes tipos de usuários (Atores) com as funcio
      Admin([👩‍💻Administrador do Sistema])
 
     Tecnico --> caso1
-    Tecnico --> caso3
+    Tecnico --> caso2
     Tecnico --> caso5
 
     Gerente --> caso1
