@@ -3,12 +3,13 @@ import mongoose, { Document, Model, Schema } from "mongoose";
 import bcrypt from "bcrypt";
 
 //atributos
-export interface IUsuario extends Document  {
+export interface IUsuario extends Document {
   _id: string;
   nome: string;
   email: string;
   senha: string;
-  funcao: string
+  funcao: string;
+  compareSenha(senhaUsuario: string): Promise<boolean>;
 }
 
 
@@ -42,6 +43,14 @@ UsuarioSchema.pre<IUsuario>('save', async function (next) {
 })
 
 //método para comparar a senha
+//quando faz o login (compara sebha dita)
+// e criptografa a senha
+UsuarioSchema.methods.compareSenha = function (
+  senhaUsuario: string
+): Promise<boolean> {
+  return bcrypt.compare(senhaUsuario, this.senha);
+};
+
 
 //toMap // FromMap
 const Usuario: Model<IUsuario> = mongoose.models.User //enviar para o banco
