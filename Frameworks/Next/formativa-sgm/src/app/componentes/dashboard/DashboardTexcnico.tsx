@@ -38,7 +38,7 @@ export default function DashboardTecnico(){
                     </tr>
                 </thead>
                  <tbody>
-                    {ordens.map((ordem)=>filte(
+                    {ordens.map((ordem)=>(
                         <tr key = {ordem._id}>
                             <td>{ordem.titulo}</td>
                             <td>{ordem.descricao}</td>

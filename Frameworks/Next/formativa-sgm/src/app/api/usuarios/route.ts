@@ -5,10 +5,10 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET() {
     //verificar a seção do ususario
-     const session = await getServerSession(authOptions);
-     if (!session || session.user?.role !== "admin") {
-       return NextResponse.json({ success: false, error: "Não autorizado" });
-     }
+    //  const session = await getServerSession(authOptions);
+    //  if (!session || session.user?.role !== "admin") {
+    //    return NextResponse.json({ success: false, error: "Não autorizado" });
+    //  }
   try {
     const data = await getAllUsuario(); //chama o controlador
     return NextResponse.json({ success: true, data: data });

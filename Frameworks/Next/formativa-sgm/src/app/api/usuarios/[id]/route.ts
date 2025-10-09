@@ -8,10 +8,7 @@ interface Parametro {
 }
 
 //patch
-export async function PATCH(
-  req: NextRequest,
-  { params }: { params: Parametro }
-) {
+export async function PATCH(req: NextRequest, { params }: { params: Parametro }) {
   try {
     const { id } = params;
     const data = await req.json();

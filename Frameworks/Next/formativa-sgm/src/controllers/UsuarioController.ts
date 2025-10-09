@@ -1,4 +1,5 @@
 import Usuario, { IUsuario } from "@/models/Usuario";
+import { criarAdmin } from "@/scripts/initUsuario";
 import connectMongo from "@/services/mongodb"
 
 //getAll
@@ -25,6 +26,7 @@ export const createUsuario = async (data: Partial<IUsuario>) => {
 //update
 export const updateUsuario = async (id: string, data: Partial<IUsuario>) => {
   await connectMongo();
+  await criarAdmin();
   const usuarioAtualizado = await Usuario.findByIdAndUpdate(id, data, {
     new: true,
   });

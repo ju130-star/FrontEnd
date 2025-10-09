@@ -155,3 +155,7 @@ graph TD
     G --> B
 
 ```
+
+## Prototipos
+
+## Codificação do Projeto

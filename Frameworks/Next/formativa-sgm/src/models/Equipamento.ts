@@ -1,26 +1,30 @@
-import mongoose, { Model, Schema } from "mongoose";
+//classe para equipamento
+
+import mongoose, { Document, Model, Schema } from "mongoose";
 
 export interface IEquipamento extends Document {
   _id: string;
   modelo: string;
   marca: string;
   localizacao: string;
-  status: string;
   numSerie: string;
+  status: string;
 }
 
 const EquipamentoSchema: Schema<IEquipamento> = new Schema({
   modelo: { type: String, required: true },
   marca: { type: String, required: true },
-  localizacao: { type: String, required: true},
-  status: { type: String, 
-    enum: ["Ativo", "Inativo"], 
-    default: "Ativo",
- },
+  localizacao: { type: String, required: true },
   numSerie: { type: String, required: true, unique: true },
+  status: {
+    type: String,
+    enum: ["ativo", "inativo", "manutencao"],
+    default: "ativo",
+  },
 });
 
-const Equipamento: Model<IEquipamento> = mongoose.models.Equipamento //enviar para o banco
-  || mongoose.model<IEquipamento>("Equipamento", EquipamentoSchema); //retornar do banco
+const Equipamento: Model<IEquipamento> =
+  mongoose.models.Equipamento ||
+  mongoose.model<IEquipamento>("Equipamento", EquipamentoSchema);
 
 export default Equipamento;
