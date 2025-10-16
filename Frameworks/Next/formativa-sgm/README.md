@@ -81,7 +81,7 @@ O projeto consiste no desenvolvimento de um Sistema de Gestão de Manutenção (
 - ### Pessoal
    -Dev Tudo
 
-## Análise de Riso
+## Análise de Risco
 
 ## Diagramas
  1. ### CLasses
