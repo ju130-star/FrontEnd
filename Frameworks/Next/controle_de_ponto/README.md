@@ -137,7 +137,7 @@ graph TD
     RH --> UC11
 ```
 
-##  Fluxo d
+##  Fluxo 
 
 O diagrama abaixo mostra o **fluxo geral de funcionamento** do sistema, desde o login até o registro de ponto e geração de relatórios.
 
@@ -159,7 +159,7 @@ G --> I[Salvar Registro de Saída no Banco de Dados]
 H --> J[Salvar Registro de Entrada no Banco de Dados]
 I --> K[Calcular Total de Horas Trabalhadas do Dia]
 J --> K
-K --> L[ Visualizar Histórico de Pontos]
+K --> L[Visualizar Histórico de Pontos]
 L --> M[Logout]
 M --> Z[Fim]
 
@@ -170,12 +170,12 @@ O --> P{Ação?}
 P --> |Cadastrar| Q[Adicionar Funcionário]
 P --> |Editar| R[Atualizar Dados]
 P --> |Excluir| S[Remover Funcionário]
-Q --> T[ Salvar no Banco de Dados]
+Q --> T[Salvar no Banco de Dados]
 R --> T
 S --> T
-T --> U[ Gerar Relatório de Horas Trabalhadas]
+T --> U[Gerar Relatório de Horas Trabalhadas]
 U --> V[Exportar Relatório (PDF/Excel)]
-V --> W[ Logout]
+V --> W[Logout]
 W --> Z
 ```
 
