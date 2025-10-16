@@ -177,7 +177,11 @@ S --> V[Salvar no Banco de Dados]
 T --> V
 U --> V
 V --> W[Gerar Relatório de Horas Trabalhadas]
+<<<<<<< HEAD
 W --> X[Exportar Relatório ]
+=======
+W --> X[Exportar Relatório]
+>>>>>>> c9cc53008bd5feebaa359e593f8fdcc4ec49f615
 X --> Y[Logout]
 Y --> Z
 ```
