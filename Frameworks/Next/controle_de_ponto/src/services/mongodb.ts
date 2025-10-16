@@ -11,12 +11,14 @@ if (!MongoUri) {
 
 //crair uma variavel para armazenar o cache do sistema
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let cached = (global as any).mongoose;
 //vai aramazenar previamente do global do node , caso já exista uma conexão com o mongoDB
 
 //caso não exista nenhuma conexão previamente estabelecida
 if (!cached) {
   //verifica a nulidade da variavel
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   cached = (global as any).moongose = { conectada: null, promessa: null };
 }
 

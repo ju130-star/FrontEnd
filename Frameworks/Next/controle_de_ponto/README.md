@@ -6,7 +6,7 @@
 
 ## Briefing
 
-O **Sistema de Controle de Ponto Simplificado (SCPS)** foi desenvolvido para substituir o processo manual de marcação de ponto do escritório fictício **DevSolutions**.  
+O **Sistema de Controle de Ponto Simplificado (SCPS)** foi desenvolvido para substituir o processo manual de marcação de ponto do escritório fictício **Escritório de Contabilidade ContaCerta**.  
 O sistema permite registrar **entrada e saída**, gerar **relatórios automáticos** e calcular **horas trabalhadas** de forma ágil e digital.
 
 ---
@@ -50,7 +50,6 @@ O sistema permite registrar **entrada e saída**, gerar **relatórios automátic
 | Tecnologia | Descrição |
 |-------------|------------|
 | **Next.js** | Framework React para front e back-end |
-| **TailwindCSS** | Estilização moderna e responsiva |
 | **MongoDB / Mongoose** | Banco de dados NoSQL |
 | **NextAuth** | Autenticação e controle de sessão |
 | **TypeScript** | Tipagem estática e robustez |
@@ -74,12 +73,14 @@ classDiagram
         +CRUD()
     }
 
-    class RegistroPonto {
+     class RegistroPonto {
         +String id
         +Date dataHora
+        +String funcionarioID
         +Enum tipoRegistro
         +Double horasTrabalhadas
         +calcularHoras()
+
     }
 
     class Relatorio {
