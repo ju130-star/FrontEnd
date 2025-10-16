@@ -15,8 +15,59 @@ O projeto consiste no desenvolvimento de um Sistema de Gestão de Manutenção (
 - Administradores do Sistema (Gerenciar a permissão dos usuários).
 
 ## Levantamento de Requisitos do projeto
-- ### Requisitos Funcionais
-- ### Requisitos Não Funcionais
+### Requisitos Funcionais (RF)
+
+1. **Autenticação e Autorização**
+   - RF1.1: Login com e-mail e senha.
+   - RF1.2: Recuperação de senha via e-mail.
+   - RF1.3: Controle de permissões por função (Técnico, Gestor, Admin).
+   - RF1.4: Geração e validação de JWT.
+
+2. **Gerenciamento de Usuários**
+   - RF2.1: CRUD de usuários (Admin).
+   - RF2.2: Atribuição de função.
+   - RF2.3: Auditoria básica (quem criou/alterou e quando).
+
+3. **Gerenciamento de Equipamentos**
+   - RF3.1: CRUD de equipamentos.
+   - RF3.2: Campos: id, modelo, marca, localização, status, número de série, fabricante, data de compra, vida útil estimada, observações.
+   - RF3.3: Upload e visualização de documentos/imagens.
+
+4. **Ordens de Serviço (OS)**
+   - RF4.1: Criação de OS com título, descrição, equipamento, tipo de manutenção, prioridade, técnico atribuído.
+   - RF4.2: Status da OS: Aberta, Em Progresso, Aguardando Peça, Concluída, Cancelada.
+   - RF4.3: CRUD de OS conforme permissão do usuário.
+   - RF4.4: Comentários e registro de atividades (logs) por OS.
+   - RF4.5: Anexar arquivos ou imagens como evidência.
+   - RF4.6: Fechamento da OS com checklist e tempo gasto.
+
+5. **Manutenção Preventiva**
+   - RF5.1: Criar planos de manutenção (periodicidade diária, semanal, mensal ou baseado em horas de uso).
+   - RF5.2: Geração automática de OS para manutenções agendadas.
+   - RF5.3: Calendário com visualização das manutenções previstas.
+
+6. **Dashboard e Relatórios**
+   - RF6.1: Dashboard com KPIs: OS abertas, tempo médio de atendimento, falhas por equipamento, manutenção prevista.
+   - RF6.2: Filtros por período, equipamento, tipo de manutenção, técnico.
+   - RF6.3: Exportar relatórios em CSV/PDF.
+
+7. **Notificações**
+   - RF7.1: Notificações por e-mail e in-app: nova OS atribuída, OS com prazo próximo, conclusão de OS.
+
+8. **Segurança e Compliance**
+   - RF8.1: Criptografia de senhas (bcrypt/argon2) e dados sensíveis.
+   - RF8.2: Logs de acesso e operações críticas.
+   - RF8.3: Políticas de senha e bloqueio após tentativas.
+
+### Requisitos Não Funcionais (RNF)
+
+- RNF1: Aplicação responsiva (desktop e tablet prioritário).
+- RNF2: Disponibilidade mínima de 99%.
+- RNF3: Tempo de resposta das APIs < 300ms.
+- RNF4: Backups diários do MongoDB.
+- RNF5: Logs centralizados.
+- RNF6: Internacionalização (pt-BR como padrão, possibilidade de outros idiomas).
+
 
 ## Recursos do Projeto
 - ### Tecnológicos 
@@ -157,5 +208,6 @@ graph TD
 ```
 
 ## Prototipos
+https://www.figma.com/design/1fnHKOzZh41vA6Sirc3K8n/Untitled?node-id=1-27&t=eNJMD7SVnhCNXGgZ-0
 
 ## Codificação do Projeto
