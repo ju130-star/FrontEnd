@@ -150,33 +150,36 @@ A[ Início] --> B[ Login]
 B --> C{Tipo de Usuário?}
 
 %% ===== Fluxo Funcionário =====
-C --> |👤 Funcionário| D[Acessa Painel do Funcionário]
-D --> E[ Registrar Ponto]
-E --> F{Último Registro foi Entrada?}
-F --> |Sim| G[Registrar Saída]
-F --> |Não| H[Registrar Entrada]
-G --> I[Salvar Registro de Saída no Banco de Dados]
-H --> J[Salvar Registro de Entrada no Banco de Dados]
-I --> K[Calcular Total de Horas Trabalhadas do Dia]
-J --> K
-K --> L[Visualizar Histórico de Pontos]
-L --> M[Logout]
-M --> Z[Fim]
+%% ===== Fluxo Funcionário =====
+C --> D["🧍 Funcionário"]
+D --> E[Acessa Painel do Funcionário]
+E --> F[Registrar Ponto]
+F --> G{Último registro foi Entrada?}
+G --> H[Registrar Saída]
+G --> I[Registrar Entrada]
+H --> J[Salvar Registro de Saída no Banco de Dados]
+I --> K[Salvar Registro de Entrada no Banco de Dados]
+J --> L[Calcular Total de Horas Trabalhadas do Dia]
+K --> L
+L --> M[Visualizar Histórico de Pontos]
+M --> N[Logout]
+N --> Z([Fim])
 
 %% ===== Fluxo Administrador =====
-C --> |🧑‍💼 Administrador (RH)| N[Acessa Painel Administrativo]
-N --> O[ Gerenciar Funcionários]
-O --> P{Ação?}
-P --> |Cadastrar| Q[Adicionar Funcionário]
-P --> |Editar| R[Atualizar Dados]
-P --> |Excluir| S[Remover Funcionário]
-Q --> T[Salvar no Banco de Dados]
-R --> T
-S --> T
-T --> U[Gerar Relatório de Horas Trabalhadas]
-U --> V[Exportar Relatório (PDF/Excel)]
-V --> W[Logout]
-W --> Z
+C --> O["🧑‍💼 Administrador (RH)"]
+O --> P[Acessa Painel Administrativo]
+P --> Q[Gerenciar Funcionários]
+Q --> R{Ação?}
+R --> S[Cadastrar Funcionário]
+R --> T[Editar Dados]
+R --> U[Excluir Funcionário]
+S --> V[Salvar no Banco de Dados]
+T --> V
+U --> V
+V --> W[Gerar Relatório de Horas Trabalhadas]
+W --> X[Exportar Relatório (PDF/Excel)]
+X --> Y[Logout]
+Y --> Z
 ```
 
 ## Prototipos
