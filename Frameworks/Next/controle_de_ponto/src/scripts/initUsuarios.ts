@@ -1,36 +1,33 @@
-import bcrypt from "bcryptjs"; // melhor usar bcryptjs no Node/Next.js
-import connectMongo from "../services/connectMongo";
-import Usuario from "../models/Usuario";
+import bcrypt from "bcryptjs";
+import connectMongo from "../services/mongodb.ts";
+import Usuario from "../models/Usuario.ts";
 import mongoose from "mongoose";
 
-export const criarAdmin = async () => {
+export const criarUsuarios = async () => {
   try {
     await connectMongo();
 
     const adminEmail = "admin@admin.com";
-
-    // Verificar se usuário já existe
     const adminExiste = await Usuario.findOne({ email: adminEmail });
-    if (!adminExiste) {
-      const senhaHash = await bcrypt.hash("admin123", 10);
 
+    if (!adminExiste) {
+      const senhaHash = await bcrypt.hash("123456", 10);
       const admin = new Usuario({
         nome: "Administrador",
         email: adminEmail,
         senha: senhaHash,
-        funcao: "admin",
+        tipoUsuario: "admin",
       });
-
       await admin.save();
-      console.log("Usuário Admin Criado!!");
+      console.log("✅ Usuário Admin criado!");
     } else {
-      console.log("Usuário já existe");
+      console.log("⚠️ Usuário admin já existe");
     }
   } catch (error) {
-    console.error("Erro ao criar admin:", error);
+    console.error("❌ Erro ao criar admin:", error);
   } finally {
-    mongoose.connection.close(); // fecha a conexão corretamente
+    mongoose.connection.close();
   }
 };
 
-criarAdmin();
+criarUsuarios();

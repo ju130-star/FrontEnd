@@ -11,20 +11,12 @@ export interface IUsuario extends Document {
   compareSenha(senhaUsuario: string): Promise<boolean>;
 }
 
-const UsuarioSchema: Schema<IUsuario> = new Schema(
-  {
-    nome: { type: String, required: true },
-    email: { type: String, required: true, unique: true },
-    senha: { type: String, required: true, select: false },
-    tipoUsuario: {
-      type: String,
-      enum: ["funcionario", "admin"],
-      required: true,
-      default: "funcionario",
-    },
-  },
-  { timestamps: true }
-);
+const UsuarioSchema = new Schema<IUsuario>({
+  nome: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  senha: { type: String, required: true, select: false },
+  tipoUsuario: { type: String, required: true },
+});
 
 UsuarioSchema.pre<IUsuario>("save", async function (next) {
   if (!this.isModified("senha") || !this.senha) return next();
@@ -37,12 +29,8 @@ UsuarioSchema.pre<IUsuario>("save", async function (next) {
   }
 });
 
-UsuarioSchema.methods.compareSenha = async function (
-  senhaUsuario: string
-): Promise<boolean> {
-  // this.senha pode estar undefined se o campo não foi selecionado
-  if (!this.senha) return false;
-  return bcrypt.compare(senhaUsuario, this.senha);
+UsuarioSchema.methods.compareSenha = async function (senha: string) {
+  return bcrypt.compare(senha, this.senha);
 };
 
 const Usuario: Model<IUsuario> =

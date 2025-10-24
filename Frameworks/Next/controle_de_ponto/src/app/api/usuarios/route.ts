@@ -1,11 +1,26 @@
-import { UsuarioController } from "@/controllers/UsuarioController";
+import { NextRequest, NextResponse } from "next/server";
+import  from "@"; 
+import Usuario from "@/models/Usuario"; 
 
-// Cadastro de usuário
-export async function POST(req: Request) {
-  return UsuarioController.cadastrar(req);
+export async function GET() {
+  await ();
+
+  const Usuarios = await Usuario.find();
+  return NextResponse.json(Usuarios);
 }
 
-// Listagem de usuários
-export async function GET() {
-  return UsuarioController.listar();
+export async function POST(request: NextRequest) {
+  await ();
+
+  const data = await request.json();
+
+  try {
+    const novoUsuario = await Usuario.create(data);
+    return NextResponse.json(novoUsuario, { status: 201 });
+  } catch (err) {
+    return NextResponse.json(
+      { error: "Erro ao criar funcionário" },
+      { status: 400 }
+    );
+  }
 }

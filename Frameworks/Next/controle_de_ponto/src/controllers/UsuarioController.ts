@@ -17,15 +17,24 @@ export class UsuarioController {
           { status: 400 }
         );
       }
+ 
 
-      const novoUsuario = new Usuario({ nome, email, senha, tipoUsuario });
-      await novoUsuario.save();
+      const senhaHash = await bcrypt.hash(senha, 10);
+      const novoUsuario = new Usuario({
+        nome,
+        email,
+        senha: senhaHash,
+        tipoUsuario,
+      });
+
+    
 
       return NextResponse.json(
         { message: "Usuário cadastrado com sucesso!", usuario: novoUsuario },
         { status: 201 }
       );
     } catch (error) {
+      console.error("❌ Erro no login:", error);
       return NextResponse.json(
         { error: "Erro ao cadastrar usuário." },
         { status: 500 }
